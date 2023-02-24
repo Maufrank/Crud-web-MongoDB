@@ -24,8 +24,43 @@ const unicornioEliminarGet = async(req = request, res = response) => {
 
 const unicornioEditarGet = async(req = request, res = response) => {
     const resultado = await FindUnicornioOne(modelo, req.params.id);
-    console.log(resultado);
-    res.render("actualizar", {data: resultado});
+
+    console.log(resultado.FechaNacimiento);
+    hola = (resultado.FechaNacimiento).toLocaleDateString();
+    hola = hola.split('/');
+    fecha = hola[2]+"-0"+hola[0]+"-"+hola[1];
+    console.log(fecha);
+
+    gen = (resultado.Genero).toString();
+    console.log(gen);
+    if(gen == 'm'){
+        genMas = 'checked';
+        genFem = '';
+    }else{
+        genMas = '';
+        genFem = 'checked';
+    }
+
+    comida = resultado.ComidaFavorita;
+    console.log(comida[1]);
+    comida1 = '';
+    comida2 = '';
+    comida3 = '';
+
+    if(comida.indexOf('mole') != -1){
+        console.log("se encontro");
+        comida1 = 'checked';
+    }
+    if(comida.indexOf('chilaquiles') != -1){
+        console.log("se encontro");
+        comida2 = 'checked';
+    }
+    if(comida.indexOf('manzana') != -1){
+        console.log("se encontro");
+        comida3 = 'checked';
+    }
+
+    res.render("actualizar", {data: resultado, fechaN: fecha, Masculino: genMas, Femenino: genFem, comida1: comida1, comida2: comida2, comida3: comida3});
 }
 
 const unicornioActualizar = async(req = request, res = response) => {

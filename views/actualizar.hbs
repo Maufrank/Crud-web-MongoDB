@@ -16,21 +16,21 @@
                 <label for="Name" class="form-label">Nombre</label>
                 <input type="text" id="Name" name="Name" class="form-control" value="{{data.Name}}">
             </div>
-            <div class="mb-3">
-                <label for="FechaNacimiento" class="form-label">Fecha de nacimiento</label>
-                <input type="date" id="fecha" name="FechaNacimiento" class="form-control" value="{{data.FechaNacimiento}}">
+            <div class="mb-3"> 
+                <label for="FechaNacimiento" class="form-label">Fecha de nacimiento </label>
+                <input type="date" id="fecha" name="FechaNacimiento" class="form-control" value="{{fechaN}}" placeholder="{{data.FechaNacimiento}}" readonly>
             </div>
                 <label for="ComidaFavorita" class="form-label">Comida Favorita</label>
                 <div class="form-check">
                     <label for="mole" class="form-check-label">Mole</label>
-                    <input type="checkbox" name="ComidaFavorita" id="mole" class="form-check-input" value="mole">
+                    <input type="checkbox" name="ComidaFavorita" id="mole" class="form-check-input" value="mole" {{comida1}}>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" name="ComidaFavorita" id="chilaquiles" class="form-check-input" value="chilaquiles">
+                    <input type="checkbox" name="ComidaFavorita" id="chilaquiles" class="form-check-input" value="chilaquiles" {{comida2}}>
                     <label for="chilaquiles" class="form-check-label">Chilaquiles</label>
                 </div>
                 <div class="mb-3 form-check">
-                    <input type="checkbox" name="ComidaFavorita" id="manzana" class="form-check-input" value="manzana">
+                    <input type="checkbox" name="ComidaFavorita" id="manzana" class="form-check-input" value="manzana" {{comida3}}>
                     <label for="manzana" class="form-check-label">Manzana</label>
                 </div>
 
@@ -42,11 +42,11 @@
 
             <label class="form-label">Elige un Genero</label>
             <div class="form-check">
-                <input type="radio" id="masculino" name="Genero" class="form-check-input" value="m">
+                <input type="radio" id="masculino" name="Genero" class="form-check-input" value="m" {{Masculino}}>
                 <label class="form-check-label">Masculino</label>
             </div>
             <div class="form-check">
-                <input type="radio" id="femenino" name="Genero" class="form-check-input" value="f">
+                <input type="radio" id="femenino" name="Genero" class="form-check-input" value="f" {{Femenino}} >
                 <label class="form-check-label">Femenino</label>
             </div>
             <div class="mb-3">
